@@ -1,0 +1,35 @@
+﻿@model ZTP_pizza.Data.Model.PizzaContent
+
+@{
+    ViewData["Title"] = "Szczegóły";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Szczegóły</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LanguageCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Wróć do listy</a>
+</div>

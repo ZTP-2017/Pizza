@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  ztp_pizza:
+    image: ztp_pizza
+    build:
+      context: ./ZTP_pizza
+      dockerfile: Dockerfile
