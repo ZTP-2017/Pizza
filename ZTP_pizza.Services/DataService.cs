@@ -1,40 +1,29 @@
 ﻿using System.Collections.Generic;
-using ZTP_pizza.Data;
+using ZTP_pizza.Data.Interfaces;
 using ZTP_pizza.Data.Model;
+using ZTP_pizza.Services.Interfaces;
 
 namespace ZTP_pizza.Services
 {
-    public interface IDataService
-    {
-        IEnumerable<Pizza> GetAll();
-        void AddPizza(Pizza pizza);
-        PizzaContent GetPizzaContentByLang(Pizza pizza, string lang);
-    }
-
     public class DataService : IDataService
     {
-        private readonly IRepo dataRepo;
-        private readonly ILanguageSelectorsBuilder langSelectorsBuilder;
+        private readonly IRepository _repository;
+        private readonly ILanguageSelectorsBuilder _langSelectorsBuilder;
 
-        public DataService(IRepo dataRepo, ILanguageSelectorsBuilder langSelectorsBuilder)
+        public DataService(IRepository dataRepo, ILanguageSelectorsBuilder langSelectorsBuilder)
         {
-            this.dataRepo = dataRepo;
-            this.langSelectorsBuilder = langSelectorsBuilder;
+            _repository = dataRepo;
+            _langSelectorsBuilder = langSelectorsBuilder;
         }
 
         public IEnumerable<Pizza> GetAll()
         {
-            return dataRepo.GetPizzaByQuery(x => true);
-        }
-
-        public void AddPizza(Pizza pizza)
-        {
-            dataRepo.AddPizza(pizza);
+            return _repository.GetPizza(x => true);
         }
 
         public PizzaContent GetPizzaContentByLang(Pizza pizza, string lang)
         {
-            var langSelector = langSelectorsBuilder.getLanguageSelectorForLanguageCode(lang);
+            var langSelector = _langSelectorsBuilder.GetMainSelector(lang);
 
             return langSelector.GetContent(pizza);
         }

@@ -1,36 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ZTP_pizza.Services.Interfaces;
 
 namespace ZTP_pizza.Services
 {
-    public interface ILanguageSelectorsBuilder
-    {
-        LanguageSelector getLanguageSelectorForLanguageCode(string code);
-    }
-
     public class LanguageSelectorsBuilder : ILanguageSelectorsBuilder
     {
-        private readonly ILanguageSelector langSelector;
+        private readonly ILanguageSelector _enLang;
 
         public LanguageSelectorsBuilder()
         {
             var anyLang = new LanguageSelector(null);
-            var plLang = new LanguageSelector("pl");
-            var enLang = new LanguageSelector("en");
 
-            enLang.failureSelector = plLang;
-            plLang.failureSelector = anyLang;
+            var plLang = new LanguageSelector("pl")
+            {
+                NextSelector = anyLang
+            };
 
-            langSelector = enLang;
+            _enLang = new LanguageSelector("en")
+            {
+                NextSelector = plLang
+            };
         }
 
-        public LanguageSelector getLanguageSelectorForLanguageCode(string code)
+        public LanguageSelector GetMainSelector(string lang)
         {
-            var languageSelector = new LanguageSelector(code);
-            languageSelector.failureSelector = langSelector;
-
-            return languageSelector;
+            return new LanguageSelector(lang)
+            {
+                NextSelector = _enLang
+            }; 
         }
     }
 }

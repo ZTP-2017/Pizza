@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using ZTP_pizza.Data.Model;
+using ZTP_pizza.Services.Interfaces;
 
 namespace ZTP_pizza.Services
 {

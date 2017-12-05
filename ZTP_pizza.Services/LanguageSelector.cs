@@ -1,43 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using ZTP_pizza.Data.Model;
+using ZTP_pizza.Services.Interfaces;
 
 namespace ZTP_pizza.Services
 {
-    public interface ILanguageSelector
-    {
-        PizzaContent GetContent(Pizza pizza);
-    }
-
     public class LanguageSelector : ILanguageSelector
     {
-        public ILanguageSelector failureSelector;
-        private readonly string langCode;
+        public ILanguageSelector NextSelector;
+        private readonly string _langCode;
 
         public LanguageSelector(string langCode)
         {
-            this.langCode = langCode;
+            _langCode = langCode;
         }
 
         public PizzaContent GetContent(Pizza pizza)
         {
-            var pizzaContent = pizza.Contents.Where(x => x.LanguageCode == langCode).FirstOrDefault();
+            var pizzaContent = pizza.Contents.FirstOrDefault(x => x.LanguageCode == _langCode);
 
             if (pizzaContent != null)
             {
                 return pizzaContent;
             }
-            else if (failureSelector != null)
-            {
-                return failureSelector.GetContent(pizza);
-            }
-            else
-            {
-                return pizza.Contents.FirstOrDefault();
-            }
-        }
 
+            return NextSelector != null ? NextSelector.GetContent(pizza) : pizza.Contents.FirstOrDefault();
+        }
     }
 }

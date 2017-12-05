@@ -5,18 +5,17 @@ namespace ZTP_pizza.Data
 {
     public class DatabaseConnection
     {
-        private readonly MongoClient mongoClient;
-        private readonly IMongoDatabase mongoDatabase;
+        private readonly IMongoDatabase _database;
 
         public DatabaseConnection()
         {
-            mongoClient = new MongoClient("mongodb://localhost:27017");
-            mongoDatabase = mongoClient.GetDatabase("pizza");
+            var client = new MongoClient("mongodb://localhost:27017");
+            _database = client.GetDatabase("pizza");
         }
 
-        public IMongoCollection<Pizza> GetData(string name)
+        public IMongoCollection<Pizza> GetData()
         {
-            return mongoDatabase.GetCollection<Pizza>(name);
+            return _database.GetCollection<Pizza>("pizza");
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using ZTP_pizza.Data.Interfaces;
 
 namespace ZTP_pizza.Data
 {
@@ -7,7 +8,7 @@ namespace ZTP_pizza.Data
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterInstance(new DatabaseConnection()).As<DatabaseConnection>();
-            builder.RegisterType<Repo>().As<IRepo>();
+            builder.RegisterType<Repository>().As<IRepository>();
         }
     }
 }
