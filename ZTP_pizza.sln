@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZTP_pizza", "ZTP_pizza\ZTP_pizza.csproj", "{2625BA34-448F-4CF9-B10D-74A15D36C2DF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZTP_pizza.Data", "ZTP_pizza.Data\ZTP_pizza.Data.csproj", "{C7EDA7C9-D8BA-4942-8AC6-59D5F86604B7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZTP_pizza.Services", "ZTP_pizza.Services\ZTP_pizza.Services.csproj", "{6A99F260-AB9A-4012-9A02-505A06D06C09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{C7EDA7C9-D8BA-4942-8AC6-59D5F86604B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7EDA7C9-D8BA-4942-8AC6-59D5F86604B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7EDA7C9-D8BA-4942-8AC6-59D5F86604B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A99F260-AB9A-4012-9A02-505A06D06C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A99F260-AB9A-4012-9A02-505A06D06C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A99F260-AB9A-4012-9A02-505A06D06C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A99F260-AB9A-4012-9A02-505A06D06C09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

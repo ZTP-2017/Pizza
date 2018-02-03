@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ZTP_pizza.Data\ZTP_pizza.Data.csproj" />
-    <ProjectReference Include="..\ZTP_pizza.Services\ZTP_pizza.Services.csproj" />
   </ItemGroup>
 
 </Project>
