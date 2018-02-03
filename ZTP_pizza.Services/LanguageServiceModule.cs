@@ -1,9 +1,9 @@
 ﻿using Autofac;
-using ZTP_pizza.Services.Interfaces;
+using ZTP_pizza.LanguageService.Interfaces;
 
-namespace ZTP_pizza.Services
+namespace ZTP_pizza.LanguageService
 {
-    public class ServicesModule : Module
+    public class LanguageServiceModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

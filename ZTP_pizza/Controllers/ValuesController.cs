@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
 using System.Collections.Generic;
-using ZTP_pizza.Services.Interfaces;
+using MongoDB.Bson;
+using ZTP_pizza.Data.Interfaces;
 
 namespace ZTP_pizza.Controllers
 {
@@ -20,9 +20,9 @@ namespace ZTP_pizza.Controllers
         {
             var result = new List<string>();
 
-            foreach (var pizza in _dataService.GetAll())
+            foreach (var pizza in _dataService.GetAllPizza())
             {
-                var content = _dataService.GetPizzaContentByLang(pizza, lang);
+                var content = _dataService.GetPizzaContentByLanguageCode(pizza, lang);
                 result.Add(content.ToJson());
             }
             

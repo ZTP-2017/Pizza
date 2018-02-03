@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Autofac;
 using ZTP_pizza.Data;
 using Autofac.Extensions.DependencyInjection;
-using ZTP_pizza.Services;
 
 namespace ZTP_pizza
 {
@@ -27,7 +26,7 @@ namespace ZTP_pizza
 
             builder.Populate(services);
             builder.RegisterModule<DataModule>();
-            builder.RegisterModule<ServicesModule>();
+            builder.RegisterModule<LanguageServiceModule>();
             ApplicationContainer = builder.Build();
 
             return new AutofacServiceProvider(ApplicationContainer);

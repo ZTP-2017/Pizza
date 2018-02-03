@@ -1,4 +1,4 @@
-﻿namespace ZTP_pizza.Services.Interfaces
+﻿namespace ZTP_pizza.LanguageService.Interfaces
 {
     public interface ILanguageSelectorsBuilder
     {

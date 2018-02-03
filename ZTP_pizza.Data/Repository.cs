@@ -11,7 +11,7 @@ namespace ZTP_pizza.Data
     {
         public IMongoCollection<Pizza> Data { get; set; }
 
-        public Repository(DatabaseConnection con)
+        public Repository(DbContext con)
         {
             Data = con.GetData();
         }

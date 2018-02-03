@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using ZTP_pizza.Data.Interfaces;
 using ZTP_pizza.Data.Model;
-using ZTP_pizza.Services.Interfaces;
+using ZTP_pizza.LanguageService.Interfaces;
 
-namespace ZTP_pizza.Services
+namespace ZTP_pizza.LanguageService
 {
     public class DataService : IDataService
     {

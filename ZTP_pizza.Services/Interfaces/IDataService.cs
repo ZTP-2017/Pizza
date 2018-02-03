@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ZTP_pizza.Data.Model;
 
-namespace ZTP_pizza.Services.Interfaces
+namespace ZTP_pizza.LanguageService.Interfaces
 {
     public interface IDataService
     {

@@ -7,7 +7,7 @@ namespace ZTP_pizza.Data
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterInstance(new DatabaseConnection()).As<DatabaseConnection>();
+            builder.RegisterInstance(new DbContext()).As<DbContext>();
             builder.RegisterType<Repository>().As<IRepository>();
         }
     }

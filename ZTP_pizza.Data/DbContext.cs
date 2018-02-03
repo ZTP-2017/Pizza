@@ -3,11 +3,11 @@ using ZTP_pizza.Data.Model;
 
 namespace ZTP_pizza.Data
 {
-    public class DatabaseConnection
+    public class DbContext
     {
         private readonly IMongoDatabase _database;
 
-        public DatabaseConnection()
+        public DbContext()
         {
             var client = new MongoClient("mongodb://localhost:27017");
             _database = client.GetDatabase("pizza");
